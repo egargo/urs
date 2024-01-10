@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+    urs:
+        image: egargo/urs
+        container_name: urs
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 2122:2122
+
+    redis:
+      image: redis:latest
+      container_name: uccp-cdo.redis
+      restart: always
+      volumes:
+          - urs_data:/data
+      ports:
+          - '6379:6379'
+
+volumes:
+    urs_data: {}

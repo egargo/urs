@@ -1,0 +1,14 @@
+# urs configuration.
+# Don't change the pre-defined values.
+
+
+[urs]
+host = "0.0.0.0"
+port = 2122
+
+[redis]
+port = 6379
+
+[cors]
+server = "http://<http server>"
+client = "http://<http client>"
